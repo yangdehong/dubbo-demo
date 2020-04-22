@@ -1,4 +1,5 @@
 # dubbo-demo
+根据https://github.com/apache/dubbo-spring-boot-project重写定义的，
 
 ## xml配置
 simple-demo，
