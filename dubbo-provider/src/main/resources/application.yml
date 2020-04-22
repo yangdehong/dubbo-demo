@@ -1,0 +1,20 @@
+
+dubbo:
+  application:
+    name: dubbo-provider
+  registry:
+    address: zookeeper://172.16.165.234:2181
+    protocol: zookeeper
+    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
+    check: true
+  protocol:
+    name: dubbo
+    port: 20880
+  monitor:
+    protocol: register
+  consumer:
+    check: true
+    timeout: 60000
+
+server:
+  port: 8061
