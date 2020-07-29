@@ -9,7 +9,7 @@
 
     <!-- 使用multicast广播注册中心暴露服务地址 -->
 <!--    <dubbo:registry protocol="zookeeper" address="multicast://172.16.165.223:2181" />-->
-    <dubbo:registry protocol="zookeeper" address="172.16.165.234:2181" />
+    <dubbo:registry protocol="zookeeper" address="172.16.165.236:2181" />
 <!--    <dubbo:registry protocol="zookeeper" address="localhost:2181" />-->
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
@@ -17,9 +17,10 @@
 
     <dubbo:provider timeout="60000" />
 
+    <!-- 注册bean -->
+    <bean id="demoService" class="com.ydh.redsheep.simpledemo.simple_demo.DemoServiceImpl" />
+
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.ydh.redsheep.simpledemo.simple_demo.DemoService" ref="demoService" />
 
-    <!-- 和本地bean一样实现服务 -->
-    <bean id="demoService" class="com.ydh.redsheep.simpledemo.simple_demo.DemoServiceImpl" />
 </beans>
