@@ -1,7 +1,7 @@
 package com.ydh.redsheep.dubbocustomer.controller;
 
-import com.ydh.redsheep.dubbocustomer.service.DemoOutService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ydh.redsheep.dubboapi.service.DemoService;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
 
-    @Autowired
-    private DemoOutService demoOutService;
+    @Reference(version = "1.0.0")
+    private DemoService demoService;
 
     @RequestMapping("/demo")
     public String getCost(){
-        return "返回结果 ："+demoOutService.sayHello("中国");
+        return "返回结果 ："+demoService.sayHello("中国");
     }
 
 }
