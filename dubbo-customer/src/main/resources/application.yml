@@ -3,7 +3,7 @@ dubbo:
   application:
     name: dubbo-consumer
   registry:
-    address: zookeeper://172.16.165.236:2181
+    address: zookeeper://172.16.165.237:2181
     protocol: zookeeper
     check: false
   monitor:
