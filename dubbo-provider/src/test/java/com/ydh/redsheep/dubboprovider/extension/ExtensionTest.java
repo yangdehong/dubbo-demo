@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class AdaptiveExtensionTest {
+public class ExtensionTest {
 
     @Test
-    public void test() {
+    public void adaptiveTest() {
         // adaptive扩展类
         AdaptiveTest adaptiveExtension = ExtensionLoader.getExtensionLoader(AdaptiveTest.class).getAdaptiveExtension();
         URL url = URL.valueOf("test://localhost/test");
