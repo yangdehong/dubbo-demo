@@ -1,3 +1,0 @@
-dubbo=com.ydh.redsheep.dubboprovider.spi.impl.AdaptiveTestImpl1
-cloud=com.ydh.redsheep.dubboprovider.spi.impl.AdaptiveTestImpl2
-thrift=com.ydh.redsheep.dubboprovider.spi.impl.AdaptiveTestImpl3

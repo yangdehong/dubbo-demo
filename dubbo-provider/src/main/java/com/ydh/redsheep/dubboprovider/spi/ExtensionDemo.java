@@ -10,7 +10,7 @@ import org.apache.dubbo.common.extension.SPI;
 * @date : 2020-09-22 11:25
 */
 @SPI("dubbo")
-public interface AdaptiveTest {
+public interface ExtensionDemo {
     @Adaptive({"server", "transporter"})
     String echo(String msg, URL url);
 }

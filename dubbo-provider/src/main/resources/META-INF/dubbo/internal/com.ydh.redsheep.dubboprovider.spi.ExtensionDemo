@@ -1,0 +1,3 @@
+dubbo=com.ydh.redsheep.dubboprovider.spi.impl.ExtensionDemoImpl1
+cloud=com.ydh.redsheep.dubboprovider.spi.impl.ExtensionDemoImpl2
+thrift=com.ydh.redsheep.dubboprovider.spi.impl.ExtensionDemoImpl3
