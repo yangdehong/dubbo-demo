@@ -33,7 +33,7 @@
         </dependency>
         <dependency>
             <groupId>com.ydh.redsheep</groupId>
-            <artifactId>self-loadbalance</artifactId>
+            <artifactId>self-threadpoll</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

@@ -2,6 +2,7 @@ package com.ydh.redsheep.dubboprovider.service;
 
 import com.ydh.redsheep.dubboapi.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.Method;
 import org.apache.dubbo.config.annotation.Service;
 
 /**
@@ -12,15 +13,15 @@ import org.apache.dubbo.config.annotation.Service;
 @Slf4j
 @Service(version = "1.0.0")
 public class DemoServiceImpl implements DemoService {
+
     @Override
     public String sayHello(String name) {
-//        log.info("时间={}", LocalDateTime.now());
-//        try {
+        try {
 //            Thread.sleep(60*1000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        log.info("时间={}", LocalDateTime.now());
+            Thread.sleep(600);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "Hello 222" + name;
     }
 }
