@@ -4,6 +4,7 @@ import com.ydh.redsheep.dubboapi.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Method;
 import org.apache.dubbo.config.annotation.Service;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
 *
@@ -14,6 +15,9 @@ import org.apache.dubbo.config.annotation.Service;
 @Service(version = "1.0.0")
 public class DemoServiceImpl implements DemoService {
 
+    @Value("${server.port}")
+    private String port;
+
     @Override
     public String sayHello(String name) {
         try {
@@ -22,6 +26,6 @@ public class DemoServiceImpl implements DemoService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "Hello 222" + name;
+        return "Hello " + port + name;
     }
 }
