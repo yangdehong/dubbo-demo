@@ -19,7 +19,13 @@
         <module>dubbo-api</module>
         <module>dubbo-customer</module>
         <module>dubbo-provider</module>
+        <module>self-filter</module>
+        <module>self-loadbalance</module>
     </modules>
+
+    <dependencyManagement>
+
+    </dependencyManagement>
 
     <build>
         <plugins>
