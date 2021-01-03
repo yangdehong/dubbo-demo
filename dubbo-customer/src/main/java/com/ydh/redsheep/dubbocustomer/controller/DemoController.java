@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @RestController
 public class DemoController {
 
-    @Reference(version = "1.0.0")
+    @Reference(version = "1.0.0", check = false, loadbalance = "onlyFirst")
     private DemoService demoService;
 
     @RequestMapping("/demo")
