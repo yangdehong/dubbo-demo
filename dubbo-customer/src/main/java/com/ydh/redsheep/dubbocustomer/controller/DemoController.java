@@ -20,7 +20,8 @@ import java.util.Random;
 @RestController
 public class DemoController {
 
-    @Reference(version = "1.0.0", check = false, loadbalance = "onlyFirst")
+//    @Reference(version = "1.0.0", check = false, loadbalance = "onlyFirst")
+    @Reference(version = "1.0.0", check = false, loadbalance = "roundrobin", mock = "return 123")
     private DemoService demoService;
 
     @RequestMapping("/demo")

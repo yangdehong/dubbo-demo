@@ -26,8 +26,8 @@ public class RestartingInstanceRouter implements Router {
     @Override
     public <T> List<Invoker<T>> route(List<Invoker<T>> invokers, URL url, Invocation invocation) throws RpcException {
         // 如果没有在重启列表中 才会加入到后续调用列表
-        return invokers.stream().filter(i -> !instances.hasRestartingInstance(i.getUrl().getParameter("remote.application"), i.getUrl().getIp()))
-                .collect(Collectors.toList());
+        return invokers.stream().filter(i -> !instances.hasRestartingInstance(i.getUrl().getParameter("remote.application"),
+                i.getUrl().getIp(), i.getUrl().getPort())).collect(Collectors.toList());
     }
 
     @Override

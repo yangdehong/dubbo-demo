@@ -56,29 +56,29 @@ public class ReadyRestartInstances implements PathChildrenCacheListener {
     /**
      * 返回应用名  和  主机拼接后的字符串
      */
-    private String buildApplicationAndInstanceString(String applicationName, String host) {
-        return applicationName + "_" + host;
+    private String buildApplicationAndInstanceString(String applicationName, String host, Integer port) {
+        return applicationName + "_" + host + "_" + port;
     }
 
     /**
      * 增加重启实例的配置信息方法
      */
-    public void addRestartingInstance(String applicationName, String host) throws Exception {
-        zkClient.create().creatingParentsIfNeeded().forPath(LISTEN_PATHS + "/" + buildApplicationAndInstanceString(applicationName, host));
+    public void addRestartingInstance(String applicationName, String host, Integer port) throws Exception {
+        zkClient.create().creatingParentsIfNeeded().forPath(LISTEN_PATHS + "/" + buildApplicationAndInstanceString(applicationName, host, port));
     }
 
     /**
      * 删除重启实例的配置信息方法
      */
-    public void removeRestartingInstance(String applicationName, String host) throws Exception {
-        zkClient.delete().forPath(LISTEN_PATHS + "/" + buildApplicationAndInstanceString(applicationName, host));
+    public void removeRestartingInstance(String applicationName, String host, Integer port) throws Exception {
+        zkClient.delete().forPath(LISTEN_PATHS + "/" + buildApplicationAndInstanceString(applicationName, host, port));
     }
 
     /**
      * 判断节点信息 是否存在于 restartInstances
      */
-    public boolean hasRestartingInstance(String applicationName, String host) {
-        return restartInstances.contains(buildApplicationAndInstanceString(applicationName, host));
+    public boolean hasRestartingInstance(String applicationName, String host, Integer port) {
+        return restartInstances.contains(buildApplicationAndInstanceString(applicationName, host, port));
     }
 
     @Override
