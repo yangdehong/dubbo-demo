@@ -35,6 +35,11 @@
             <artifactId>self-loadbalance</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.ydh.redsheep</groupId>
+            <artifactId>self-router</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
         <!--引入dubbo环境-->
         <dependency>
