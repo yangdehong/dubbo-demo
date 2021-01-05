@@ -27,7 +27,7 @@ public class TPMonitorController {
         ExecutorService executorService = Executors.newFixedThreadPool(200);
         while (true) {
             try {
-                Thread.sleep(10);
+                Thread.sleep(25);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

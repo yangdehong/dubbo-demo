@@ -2,7 +2,6 @@ package com.ydh.redsheep.dubboprovider.service;
 
 import com.ydh.redsheep.dubboapi.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.dubbo.config.annotation.Method;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Value;
 

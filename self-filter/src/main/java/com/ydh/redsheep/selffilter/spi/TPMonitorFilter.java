@@ -5,10 +5,7 @@ import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.rpc.*;
 import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -17,7 +14,7 @@ public class TPMonitorFilter implements Filter {
     /**
      * TODO 不用dubbo的线程池，不然还得加全局变量，有点麻烦
      */
-    public static final ConcurrentMap<String, List<Long>> map = new ConcurrentHashMap<>();
+    public static ConcurrentMap<String, List<Long>> map = new ConcurrentHashMap<>();
 
     /**
      * Make sure call invoker.invoke() in your implementation.
@@ -42,6 +39,7 @@ public class TPMonitorFilter implements Filter {
             } else {
                 list.add(time);
             }
+            Collections.sort(list);
         }
     }
 }
