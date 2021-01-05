@@ -3,6 +3,7 @@ package com.ydh.redsheep.dubboprovider.service;
 import com.ydh.redsheep.dubboapi.service.TPMonitorService;
 import com.ydh.redsheep.selffilter.spi.TPMonitorFilter;
 import org.apache.dubbo.config.annotation.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.Collections;
 import java.util.List;
@@ -25,6 +26,9 @@ public class TPMonitorServiceImpl implements TPMonitorService {
                     ConcurrentMap<String, List<Long>> map = TPMonitorFilter.map;
                     map.keySet().forEach(key -> {
                         List<Long> list = map.get(key);
+                        if (CollectionUtils.isEmpty(list)) {
+                            return;
+                        }
                         Collections.sort(list);
                         int size = list.size();
                         // TP90：满足百分之九十的网络请求所需的最低耗时
