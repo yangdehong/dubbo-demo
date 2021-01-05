@@ -6,7 +6,7 @@
         <groupId>com.ydh.redsheep</groupId>
         <artifactId>dubbo-demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <groupId>com.ydh.redsheep</groupId>
     <artifactId>dubbo-api</artifactId>

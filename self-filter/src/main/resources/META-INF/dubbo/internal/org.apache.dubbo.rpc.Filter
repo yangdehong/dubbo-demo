@@ -1,1 +1,2 @@
 timeFilter=com.ydh.redsheep.selffilter.spi.MyFilter
+TPMonitorFilter=com.ydh.redsheep.selffilter.spi.TPMonitorFilter
