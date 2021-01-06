@@ -19,12 +19,12 @@ public class DemoServiceImpl implements DemoService {
 
     @Override
     public String sayHello(String name) {
-        try {
-            Thread.sleep(60*1000);
-//            Thread.sleep(600);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(60*1000);
+////            Thread.sleep(600);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return "Hello " + port + name;
     }
 }
